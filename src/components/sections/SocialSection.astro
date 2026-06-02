@@ -1,0 +1,14 @@
+---
+import social from '../../content/social.json';
+---
+<section id="redes" class="bg-[#070707] py-24">
+  <div class="section-shell">
+    <p class="eyebrow">Redes</p>
+    <h2 class="cinematic-title mt-4 text-5xl md:text-7xl">Conecta con la banda</h2>
+    <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      {social.map((item) => (
+        <a href={item.url} target="_blank" rel="noreferrer" class="rounded-2xl border border-white/10 bg-white/[0.03] p-6 font-bold uppercase tracking-[0.2em] text-smoke transition hover:border-ember hover:text-ember">{item.label}</a>
+      ))}
+    </div>
+  </div>
+</section>

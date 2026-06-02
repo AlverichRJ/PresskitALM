@@ -1,0 +1,15 @@
+---
+import MusicCarousel from '../interactive/MusicCarousel';
+---
+<section id="musica" class="bg-[#080808] py-28">
+  <div class="section-shell">
+    <p class="eyebrow">Música</p>
+    <div class="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
+      <h2 class="cinematic-title mt-4 text-6xl md:text-8xl">Sonido de alto voltaje</h2>
+      <p class="max-w-xl text-lg leading-8 text-smoke">Bloque inicial para destacar canciones, videos oficiales y plataformas. Los enlaces actuales son de referencia y se sustituyen desde `src/content/music.json`.</p>
+    </div>
+    <div class="mt-14">
+      <MusicCarousel client:visible />
+    </div>
+  </div>
+</section>

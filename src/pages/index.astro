@@ -1,0 +1,24 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import DelayedNavbar from '../components/layout/DelayedNavbar.astro';
+import HeroSection from '../components/sections/HeroSection.astro';
+import MembersSection from '../components/sections/MembersSection.astro';
+import StorySection from '../components/sections/StorySection.astro';
+import MusicSection from '../components/sections/MusicSection.astro';
+import GallerySection from '../components/sections/GallerySection.astro';
+import SocialSection from '../components/sections/SocialSection.astro';
+import ContactSection from '../components/sections/ContactSection.astro';
+import band from '../content/band.json';
+---
+<BaseLayout title={`${band.name} | Presskit Digital`} description={band.description}>
+  <DelayedNavbar />
+  <main>
+    <HeroSection />
+    <MembersSection />
+    <StorySection />
+    <MusicSection />
+    <GallerySection />
+    <SocialSection />
+    <ContactSection />
+  </main>
+</BaseLayout>

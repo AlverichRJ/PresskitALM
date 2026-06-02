@@ -1,0 +1,14 @@
+[
+  {
+    "title": "Track destacado",
+    "platform": "Spotify",
+    "url": "https://open.spotify.com/",
+    "cover": "/images/musica/placeholder.svg"
+  },
+  {
+    "title": "Video oficial",
+    "platform": "YouTube",
+    "url": "https://www.youtube.com/",
+    "cover": "/images/musica/placeholder.svg"
+  }
+]

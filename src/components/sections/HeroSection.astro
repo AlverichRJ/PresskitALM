@@ -1,0 +1,18 @@
+---
+import band from '../../content/band.json';
+---
+<section id="inicio" class="relative grid min-h-screen place-items-center overflow-hidden bg-black px-6 py-24">
+  <div class="absolute inset-0 bg-[url('/images/hero/hero-placeholder.svg')] bg-cover bg-center opacity-80"></div>
+  <div class="absolute inset-0 bg-gradient-to-b from-black/35 via-black/50 to-[#070707]"></div>
+  <div class="absolute left-1/2 top-1/2 h-[34rem] w-[34rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-ember/10 blur-3xl"></div>
+  <div class="relative z-10 mx-auto max-w-5xl text-center">
+    <p class="eyebrow mb-6">Presskit Digital Interactivo</p>
+    <h1 class="cinematic-title text-[clamp(4.5rem,15vw,13rem)] text-bone drop-shadow-2xl">{band.name}</h1>
+    <p class="mx-auto mt-8 max-w-2xl text-lg leading-8 text-smoke md:text-xl">{band.tagline}</p>
+    <div class="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+      <a href="#integrantes" class="rounded-full bg-ember px-7 py-4 text-sm font-black uppercase tracking-[0.22em] text-white shadow-ember transition hover:scale-[1.03]">{band.heroCtaPrimary}</a>
+      <a href="#musica" class="rounded-full border border-white/20 px-7 py-4 text-sm font-black uppercase tracking-[0.22em] text-bone transition hover:border-ember hover:text-ember">{band.heroCtaSecondary}</a>
+    </div>
+  </div>
+  <div class="absolute bottom-8 left-1/2 z-10 -translate-x-1/2 text-xs uppercase tracking-[0.34em] text-bone/50">Scroll</div>
+</section>

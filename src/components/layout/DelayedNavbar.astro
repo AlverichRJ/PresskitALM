@@ -1,0 +1,26 @@
+---
+const items = [
+  ['Inicio', '#inicio'],
+  ['Integrantes', '#integrantes'],
+  ['Historia', '#historia'],
+  ['Música', '#musica'],
+  ['Galería', '#galeria'],
+  ['Redes', '#redes'],
+  ['Contacto', '#contacto']
+];
+---
+<header class="fixed left-0 right-0 top-0 z-50 translate-y-[-120%] opacity-0 transition-all duration-1000 ease-out" data-delayed-navbar>
+  <nav class="mx-auto mt-4 flex w-[min(1120px,calc(100%-2rem))] items-center justify-between rounded-full border border-white/10 bg-black/35 px-5 py-3 text-sm text-bone/85 shadow-2xl backdrop-blur-xl">
+    <a href="#inicio" class="font-display text-lg uppercase tracking-[0.22em] text-bone">Al-Maburak</a>
+    <div class="hidden items-center gap-5 md:flex">
+      {items.slice(1).map(([label, href]) => <a class="transition hover:text-ember" href={href}>{label}</a>)}
+    </div>
+    <a href="#contacto" class="rounded-full border border-ember/60 px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] text-ember transition hover:bg-ember hover:text-white">Booking</a>
+  </nav>
+</header>
+<script>
+  const navbar = document.querySelector('[data-delayed-navbar]');
+  const reveal = () => navbar?.classList.remove('translate-y-[-120%]', 'opacity-0');
+  window.setTimeout(reveal, 2200);
+  window.addEventListener('scroll', reveal, { once: true });
+</script>

@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Integrante 1",
+    "role": "Voz",
+    "bio": "Presencia principal y energía frontal de la banda.",
+    "image": "/images/integrantes/placeholder.svg"
+  },
+  {
+    "name": "Integrante 2",
+    "role": "Guitarra",
+    "bio": "Texturas, riffs y atmósferas de alto contraste.",
+    "image": "/images/integrantes/placeholder.svg"
+  },
+  {
+    "name": "Integrante 3",
+    "role": "Bajo",
+    "bio": "Peso, profundidad y base sonora del proyecto.",
+    "image": "/images/integrantes/placeholder.svg"
+  },
+  {
+    "name": "Integrante 4",
+    "role": "Batería",
+    "bio": "Pulso, tensión y fuerza rítmica en vivo.",
+    "image": "/images/integrantes/placeholder.svg"
+  }
+]
