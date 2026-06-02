@@ -935,6 +935,10 @@ body::before {
   letter-spacing: -0.055em;
 }
 
+.members-story-title__nowrap {
+  white-space: nowrap;
+}
+
 .members-story-hero {
   position: relative;
   width: 100%;
