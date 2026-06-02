@@ -107,7 +107,6 @@ const bandBackdrop = assetPath('/images/hero/hero-placeholder.svg');
     const memberOverlays = Array.from(document.querySelectorAll('[data-member-overlay]'));
     let activeOverlay = null;
     let lastTrigger = null;
-    const canHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
 
     function closeActiveOverlay() {
       if (!activeOverlay) return;
@@ -148,9 +147,6 @@ const bandBackdrop = assetPath('/images/hero/hero-placeholder.svg');
     memberTriggers.forEach((trigger) => {
       const index = Number(trigger.getAttribute('data-member-trigger'));
       trigger.addEventListener('click', () => openMemberOverlay(index, trigger));
-      if (canHover) {
-        trigger.addEventListener('mouseenter', () => openMemberOverlay(index, trigger));
-      }
     });
 
     document.addEventListener('click', (event) => {
