@@ -316,3 +316,51 @@ body::before {
     transform: translate(-50%, 0.85rem);
   }
 }
+
+.scene-section {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 100svh;
+  padding-block: clamp(7.5rem, 10vw, 11rem);
+  scroll-margin-top: 6rem;
+  border-top: 1px solid rgba(244, 238, 232, 0.07);
+  background-image:
+    linear-gradient(180deg, rgba(0, 0, 0, 0.78) 0%, rgba(15, 15, 15, 0) 18%, rgba(15, 15, 15, 0) 78%, rgba(0, 0, 0, 0.82) 100%),
+    radial-gradient(circle at 12% 18%, rgba(199, 58, 14, 0.08), transparent 28rem);
+}
+
+.scene-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background:
+    linear-gradient(90deg, rgba(0, 0, 0, 0.56) 0%, transparent 18%, transparent 78%, rgba(0, 0, 0, 0.72) 100%),
+    radial-gradient(circle at 50% 0%, rgba(244, 238, 232, 0.035), transparent 30rem);
+}
+
+.scene-section > .section-shell,
+.scene-section > .relative {
+  position: relative;
+  z-index: 1;
+}
+
+.scene-section--ember {
+  background-image:
+    linear-gradient(180deg, rgba(0, 0, 0, 0.86) 0%, rgba(10, 8, 7, 0.2) 20%, rgba(10, 8, 7, 0.2) 76%, rgba(0, 0, 0, 0.9) 100%),
+    radial-gradient(circle at 16% 32%, rgba(199, 58, 14, 0.13), transparent 34rem);
+}
+
+.scene-section--contact {
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .scene-section {
+    min-height: auto;
+    padding-block: 6.5rem;
+    scroll-margin-top: 5rem;
+  }
+}
