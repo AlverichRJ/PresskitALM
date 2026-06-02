@@ -8,8 +8,6 @@ import band from '../../content/band.json';
   <div class="hero-vignette absolute inset-0"></div>
 
   <div class="relative z-10 mx-auto flex max-w-6xl flex-col items-center text-center">
-    <p class="eyebrow hero-kicker mb-7">Presskit Digital Interactivo</p>
-
     <div class="brand-fusion" aria-label="Al-Maburak">
       <img
         src="/brand/almaburak-emblema-cuervo.webp"
@@ -33,13 +31,12 @@ import band from '../../content/band.json';
     </div>
 
     <h1 class="sr-only">{band.name}</h1>
-    <p class="mx-auto mt-8 max-w-2xl text-lg leading-8 text-smoke md:text-xl">{band.tagline}</p>
-
-    <div class="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-      <a href="#integrantes" class="rounded-full bg-ember px-7 py-4 text-sm font-black uppercase tracking-[0.22em] text-white shadow-ember transition hover:scale-[1.03]">{band.heroCtaPrimary}</a>
-      <a href="#musica" class="rounded-full border border-white/20 px-7 py-4 text-sm font-black uppercase tracking-[0.22em] text-bone transition hover:border-ember hover:text-ember">{band.heroCtaSecondary}</a>
-    </div>
   </div>
 
-  <div class="absolute bottom-8 left-1/2 z-10 -translate-x-1/2 text-xs uppercase tracking-[0.34em] text-bone/50">Scroll</div>
+  <a href="#integrantes" class="scroll-cue" aria-label="Desplazarse hacia el contenido del presskit">
+    <span class="scroll-cue__mouse" aria-hidden="true">
+      <span class="scroll-cue__wheel"></span>
+    </span>
+    <span class="scroll-cue__arrow" aria-hidden="true"></span>
+  </a>
 </section>
