@@ -2,25 +2,57 @@
   {
     "name": "Integrante 1",
     "role": "Voz",
+    "instrument": "Voz principal",
     "bio": "Presencia principal y energía frontal de la banda.",
+    "experience": "Voz líder enfocada en interpretación escénica, conexión directa con el público y narrativa oscura dentro del sonido de Al-Maburak.",
+    "backline": ["Micrófono vocal dinámico", "Sistema in-ear", "Procesamiento vocal de ambiente", "Monitoreo frontal de escenario"],
+    "socials": [
+      { "label": "Instagram", "url": "#" },
+      { "label": "TikTok", "url": "#" }
+    ],
+    "featured": ["Tomas en vivo", "Sesión vocal", "Galería press"],
     "image": "/images/integrantes/placeholder.svg"
   },
   {
     "name": "Integrante 2",
     "role": "Guitarra",
+    "instrument": "Guitarra eléctrica",
     "bio": "Texturas, riffs y atmósferas de alto contraste.",
+    "experience": "Guitarrista orientado a riffs de alto impacto, capas ambientales y construcción de tensión sonora para directo y estudio.",
+    "backline": ["Guitarra eléctrica principal", "Amplificador high-gain", "Pedales de drive y delay", "Cabina 4x12 o simulación IR"],
+    "socials": [
+      { "label": "Instagram", "url": "#" },
+      { "label": "YouTube", "url": "#" }
+    ],
+    "featured": ["Riffs destacados", "Setup de guitarra", "Live session"],
     "image": "/images/integrantes/placeholder.svg"
   },
   {
     "name": "Integrante 3",
     "role": "Bajo",
+    "instrument": "Bajo eléctrico",
     "bio": "Peso, profundidad y base sonora del proyecto.",
+    "experience": "Bajista encargado de sostener el peso de la banda, reforzar la profundidad armónica y conectar el pulso rítmico con la energía escénica.",
+    "backline": ["Bajo eléctrico activo", "Amplificador de bajo", "Compresor", "DI profesional para directo"],
+    "socials": [
+      { "label": "Instagram", "url": "#" },
+      { "label": "Facebook", "url": "#" }
+    ],
+    "featured": ["Grooves en vivo", "Backline bajo", "Foto editorial"],
     "image": "/images/integrantes/placeholder.svg"
   },
   {
     "name": "Integrante 4",
     "role": "Batería",
+    "instrument": "Batería",
     "bio": "Pulso, tensión y fuerza rítmica en vivo.",
+    "experience": "Baterista enfocado en dinámica, potencia y precisión para sostener la intensidad del show en vivo de Al-Maburak.",
+    "backline": ["Batería acústica", "Set de platillos", "Trigger o sample pad", "Micrófonos para directo"],
+    "socials": [
+      { "label": "Instagram", "url": "#" },
+      { "label": "YouTube", "url": "#" }
+    ],
+    "featured": ["Drum cam", "Setup batería", "Clips en vivo"],
     "image": "/images/integrantes/placeholder.svg"
   }
 ]

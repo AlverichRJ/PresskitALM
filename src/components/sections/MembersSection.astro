@@ -1,39 +1,167 @@
 ---
 import members from '../../content/members.json';
+
+const bandBackdrop = '/images/hero/hero-placeholder.svg';
 ---
-<section id="integrantes" class="scene-section bg-[#070707]">
+<section id="integrantes" class="scene-section bg-[#070707] members-section" data-members-section>
   <div class="section-shell">
     <p class="eyebrow">Integrantes</p>
     <h2 class="cinematic-title mt-4 max-w-3xl text-6xl md:text-8xl">Presencia en escena</h2>
+    <p class="members-intro mt-6 max-w-2xl">
+      Explora el perfil escénico de cada integrante. Las tarjetas funcionan como disparadores de una ficha inmersiva con información profesional, backline y material destacado.
+    </p>
 
     <div class="members-stage mt-14" aria-label="Integrantes de Al-Maburak">
+      <div class="members-band-backdrop" aria-hidden="true">
+        <img src={bandBackdrop} alt="" />
+      </div>
+
       {members.map((member, index) => (
-        <article class="member-card" tabindex="0" style={`--member-index: ${index + 1}`}>
-          <div class="member-card__thumb" aria-hidden="true">
+        <button
+          class="member-card"
+          type="button"
+          data-member-trigger={index}
+          aria-haspopup="dialog"
+          aria-controls={`member-overlay-${index}`}
+          style={`--member-index: ${index + 1}`}
+        >
+          <span class="member-card__thumb" aria-hidden="true">
             <img src={member.image} alt="" class="member-card__thumb-image" />
-          </div>
-
-          <div class="member-card__summary">
-            <p class="member-card__role">{member.role}</p>
-            <h3 class="member-card__name">{member.name}</h3>
-            <p class="member-card__bio">{member.bio}</p>
-          </div>
-
-          <div class="member-spotlight" aria-hidden="true">
-            <img src={member.image} alt="" class="member-spotlight__image" />
-            <div class="member-spotlight__wash"></div>
-            <div class="member-spotlight__content">
-              <p class="member-spotlight__kicker">0{index + 1} / {member.role}</p>
-              <h3 class="member-spotlight__name">{member.name}</h3>
-              <p class="member-spotlight__bio">{member.bio}</p>
-              <div class="member-spotlight__meta">
-                <span>Perfil escénico</span>
-                <p>Información destacada para medios, booking y presentación oficial dentro del presskit.</p>
-              </div>
-            </div>
-          </div>
-        </article>
+          </span>
+          <span class="member-card__summary">
+            <span class="member-card__role">{member.role}</span>
+            <span class="member-card__name">{member.name}</span>
+            <span class="member-card__bio">{member.bio}</span>
+            <span class="member-card__cue">Abrir perfil</span>
+          </span>
+        </button>
       ))}
     </div>
   </div>
+
+  <div class="members-overlays" aria-live="polite">
+    {members.map((member, index) => (
+      <aside
+        id={`member-overlay-${index}`}
+        class="member-profile-overlay"
+        data-member-overlay={index}
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby={`member-overlay-title-${index}`}
+        aria-hidden="true"
+      >
+        <div class="member-profile-overlay__scrim" data-member-close></div>
+        <div class="member-profile-overlay__panel">
+          <button class="member-profile-overlay__close" type="button" data-member-close aria-label={`Cerrar perfil de ${member.name}`}>
+            <span aria-hidden="true">×</span>
+          </button>
+
+          <div class="member-profile-overlay__media" aria-hidden="true">
+            <img src={member.image} alt="" />
+          </div>
+
+          <div class="member-profile-overlay__content">
+            <p class="member-profile-overlay__kicker">0{index + 1} / {member.role}</p>
+            <h3 id={`member-overlay-title-${index}`} class="member-profile-overlay__name">{member.name}</h3>
+            <p class="member-profile-overlay__instrument">{member.instrument}</p>
+            <p class="member-profile-overlay__bio">{member.bio}</p>
+
+            <div class="member-profile-overlay__grid">
+              <section class="member-profile-block member-profile-block--wide">
+                <p class="member-profile-block__label">Biografía / experiencia</p>
+                <p>{member.experience}</p>
+              </section>
+
+              <section class="member-profile-block">
+                <p class="member-profile-block__label">Mi Backline</p>
+                <ul class="member-profile-list">
+                  {member.backline.map((item) => <li>{item}</li>)}
+                </ul>
+              </section>
+
+              <section class="member-profile-block">
+                <p class="member-profile-block__label">Destacados</p>
+                <ul class="member-profile-list">
+                  {member.featured.map((item) => <li>{item}</li>)}
+                </ul>
+              </section>
+            </div>
+
+            <nav class="member-profile-overlay__socials" aria-label={`Redes sociales de ${member.name}`}>
+              {member.socials.map((social) => (
+                <a href={social.url} target={social.url === '#' ? undefined : '_blank'} rel={social.url === '#' ? undefined : 'noreferrer'}>
+                  {social.label}
+                </a>
+              ))}
+            </nav>
+          </div>
+        </div>
+      </aside>
+    ))}
+  </div>
+
+  <script>
+    const membersSection = document.querySelector('[data-members-section]');
+    const memberTriggers = Array.from(document.querySelectorAll('[data-member-trigger]'));
+    const memberOverlays = Array.from(document.querySelectorAll('[data-member-overlay]'));
+    let activeOverlay = null;
+    let lastTrigger = null;
+    const canHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+    function closeActiveOverlay() {
+      if (!activeOverlay) return;
+      activeOverlay.classList.remove('is-open');
+      activeOverlay.setAttribute('aria-hidden', 'true');
+      document.documentElement.classList.remove('has-member-overlay');
+      membersSection?.classList.remove('has-active-member');
+      memberTriggers.forEach((trigger) => trigger.classList.remove('is-dimmed', 'is-selected'));
+      const triggerToFocus = lastTrigger;
+      activeOverlay = null;
+      if (triggerToFocus && document.activeElement?.closest('[data-member-overlay]')) {
+        triggerToFocus.focus({ preventScroll: true });
+      }
+    }
+
+    function openMemberOverlay(index, trigger) {
+      const overlay = memberOverlays[index];
+      if (!overlay) return;
+      if (activeOverlay && activeOverlay !== overlay) {
+        activeOverlay.classList.remove('is-open');
+        activeOverlay.setAttribute('aria-hidden', 'true');
+      }
+      activeOverlay = overlay;
+      lastTrigger = trigger;
+      document.documentElement.classList.add('has-member-overlay');
+      membersSection?.classList.add('has-active-member');
+      memberTriggers.forEach((item) => {
+        const isSelected = item === trigger;
+        item.classList.toggle('is-selected', isSelected);
+        item.classList.toggle('is-dimmed', !isSelected);
+      });
+      overlay.setAttribute('aria-hidden', 'false');
+      requestAnimationFrame(() => overlay.classList.add('is-open'));
+      const closeButton = overlay.querySelector('[data-member-close]');
+      closeButton?.focus({ preventScroll: true });
+    }
+
+    memberTriggers.forEach((trigger) => {
+      const index = Number(trigger.getAttribute('data-member-trigger'));
+      trigger.addEventListener('click', () => openMemberOverlay(index, trigger));
+      if (canHover) {
+        trigger.addEventListener('mouseenter', () => openMemberOverlay(index, trigger));
+      }
+    });
+
+    document.addEventListener('click', (event) => {
+      if (event.target?.closest?.('[data-member-close]')) {
+        closeActiveOverlay();
+      }
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') {
+        closeActiveOverlay();
+      }
+    });
+  </script>
 </section>
