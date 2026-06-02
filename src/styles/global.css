@@ -929,10 +929,12 @@ body::before {
 }
 
 .members-story-title {
-  max-width: 1180px;
-  font-size: clamp(3.4rem, 7.4vw, 8.4rem);
+  width: 100%;
+  max-width: none;
+  font-size: clamp(3.4rem, 6.2vw, 7.4rem);
   line-height: 0.88;
   letter-spacing: -0.055em;
+  white-space: nowrap;
 }
 
 .members-story-title__nowrap {
@@ -1122,6 +1124,7 @@ body::before {
 
   .members-story-title {
     font-size: clamp(3.05rem, 15vw, 5rem);
+    white-space: normal;
   }
 
   .members-story-hero {
