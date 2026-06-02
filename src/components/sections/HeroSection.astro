@@ -1,18 +1,45 @@
 ---
 import band from '../../content/band.json';
 ---
-<section id="inicio" class="relative grid min-h-screen place-items-center overflow-hidden bg-black px-6 py-24">
-  <div class="absolute inset-0 bg-[url('/images/hero/hero-placeholder.svg')] bg-cover bg-center opacity-80"></div>
-  <div class="absolute inset-0 bg-gradient-to-b from-black/35 via-black/50 to-[#070707]"></div>
-  <div class="absolute left-1/2 top-1/2 h-[34rem] w-[34rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-ember/10 blur-3xl"></div>
-  <div class="relative z-10 mx-auto max-w-5xl text-center">
-    <p class="eyebrow mb-6">Presskit Digital Interactivo</p>
-    <h1 class="cinematic-title text-[clamp(4.5rem,15vw,13rem)] text-bone drop-shadow-2xl">{band.name}</h1>
+<section id="inicio" class="hero-cinematic relative grid min-h-screen place-items-center overflow-hidden bg-black px-6 py-24">
+  <div class="absolute inset-0 bg-[url('/images/hero/hero-placeholder.svg')] bg-cover bg-center opacity-60"></div>
+  <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(199,58,14,0.18),transparent_28rem),linear-gradient(180deg,rgba(0,0,0,0.45)_0%,rgba(0,0,0,0.76)_52%,#070707_100%)]"></div>
+  <div class="absolute left-1/2 top-1/2 h-[42rem] w-[42rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-ember/10 blur-3xl"></div>
+  <div class="hero-vignette absolute inset-0"></div>
+
+  <div class="relative z-10 mx-auto flex max-w-6xl flex-col items-center text-center">
+    <p class="eyebrow hero-kicker mb-7">Presskit Digital Interactivo</p>
+
+    <div class="brand-fusion" aria-label="Al-Maburak">
+      <img
+        src="/brand/almaburak-emblema-cuervo.webp"
+        alt="Emblema de Al-Maburak con ave y rayo"
+        class="brand-fusion__emblem"
+        width="1560"
+        height="1080"
+        loading="eager"
+        decoding="async"
+      />
+      <img
+        src="/brand/almaburak-logo-horizontal.webp"
+        alt="Logotipo horizontal de Al-Maburak"
+        class="brand-fusion__wordmark"
+        width="1560"
+        height="320"
+        loading="eager"
+        decoding="async"
+      />
+      <span class="brand-fusion__ember" aria-hidden="true"></span>
+    </div>
+
+    <h1 class="sr-only">{band.name}</h1>
     <p class="mx-auto mt-8 max-w-2xl text-lg leading-8 text-smoke md:text-xl">{band.tagline}</p>
+
     <div class="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
       <a href="#integrantes" class="rounded-full bg-ember px-7 py-4 text-sm font-black uppercase tracking-[0.22em] text-white shadow-ember transition hover:scale-[1.03]">{band.heroCtaPrimary}</a>
       <a href="#musica" class="rounded-full border border-white/20 px-7 py-4 text-sm font-black uppercase tracking-[0.22em] text-bone transition hover:border-ember hover:text-ember">{band.heroCtaSecondary}</a>
     </div>
   </div>
+
   <div class="absolute bottom-8 left-1/2 z-10 -translate-x-1/2 text-xs uppercase tracking-[0.34em] text-bone/50">Scroll</div>
 </section>
