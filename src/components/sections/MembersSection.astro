@@ -8,22 +8,28 @@ import members from '../../content/members.json';
 
     <div class="members-stage mt-14" aria-label="Integrantes de Al-Maburak">
       {members.map((member, index) => (
-        <article class="member-card group" tabindex="0" style={`--member-index: ${index + 1}`}>
-          <div class="member-card__glow" aria-hidden="true"></div>
-          <div class="member-card__media">
-            <img src={member.image} alt={`Retrato de ${member.name}`} class="member-card__image" />
-            <div class="member-card__number" aria-hidden="true">0{index + 1}</div>
+        <article class="member-card" tabindex="0" style={`--member-index: ${index + 1}`}>
+          <div class="member-card__thumb" aria-hidden="true">
+            <img src={member.image} alt="" class="member-card__thumb-image" />
           </div>
 
-          <div class="member-card__content">
+          <div class="member-card__summary">
             <p class="member-card__role">{member.role}</p>
             <h3 class="member-card__name">{member.name}</h3>
             <p class="member-card__bio">{member.bio}</p>
+          </div>
 
-            <div class="member-card__reveal">
-              <span class="member-card__line"></span>
-              <p class="member-card__label">Perfil escénico</p>
-              <p class="member-card__detail">Información destacada para medios, booking y presentación oficial dentro del presskit.</p>
+          <div class="member-spotlight" aria-hidden="true">
+            <img src={member.image} alt="" class="member-spotlight__image" />
+            <div class="member-spotlight__wash"></div>
+            <div class="member-spotlight__content">
+              <p class="member-spotlight__kicker">0{index + 1} / {member.role}</p>
+              <h3 class="member-spotlight__name">{member.name}</h3>
+              <p class="member-spotlight__bio">{member.bio}</p>
+              <div class="member-spotlight__meta">
+                <span>Perfil escénico</span>
+                <p>Información destacada para medios, booking y presentación oficial dentro del presskit.</p>
+              </div>
             </div>
           </div>
         </article>
