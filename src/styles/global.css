@@ -1039,7 +1039,7 @@ body::before {
   min-width: 0;
   overflow: hidden;
   box-sizing: border-box;
-  gap: clamp(0.5rem, 0.85vw, 0.75rem);
+  gap: clamp(0.9rem, 1.45vw, 1.25rem);
   margin: clamp(1.35rem, 2.25vw, 1.85rem) auto 0;
   padding: 0 clamp(0.75rem, 3.2vw, 3rem);
   color: rgba(244, 238, 232, 0.86);
@@ -1070,18 +1070,6 @@ body::before {
   text-wrap: balance;
 }
 
-.members-story-copy__line--lead::before {
-  content: "“";
-  position: absolute;
-  left: clamp(-4.35rem, -4.25vw, -2.65rem);
-  top: clamp(-0.45rem, -0.8vw, -0.15rem);
-  color: rgb(199, 58, 14);
-  font-family: Oswald, Impact, "Arial Narrow", sans-serif;
-  font-size: clamp(4.5rem, 9vw, 7rem);
-  font-weight: 900;
-  line-height: 0.9;
-  pointer-events: none;
-}
 
 .members-story-copy__spark {
   display: grid;
@@ -1090,8 +1078,8 @@ body::before {
   justify-content: center;
   column-gap: clamp(0.55rem, 1.35vw, 1rem);
   width: min(22rem, 72%);
-  min-height: 2.35rem;
-  margin: clamp(-0.1rem, 0.25vw, 0.08rem) auto 0;
+  min-height: clamp(2.75rem, 4.25vw, 3.4rem);
+  margin: clamp(0.15rem, 0.8vw, 0.55rem) auto clamp(0.2rem, 0.9vw, 0.65rem);
 }
 
 .members-story-copy__spark::before,
@@ -1149,16 +1137,6 @@ body::before {
   word-spacing: normal;
 }
 
-.members-story-copy__sentence-break {
-  display: block;
-  width: 100%;
-  max-width: 100%;
-  min-width: 0;
-  box-sizing: border-box;
-  hyphens: none;
-  overflow-wrap: normal;
-  word-break: normal;
-}
 
 .members-story-copy__line--origin {
   color: rgba(244, 238, 232, 0.84);
@@ -1210,7 +1188,7 @@ body::before {
   .members-story-copy {
     --members-story-text-width: min(100%, 34rem);
     max-width: 100%;
-    gap: 0.62rem;
+    gap: 0.9rem;
     margin-top: 1.3rem;
     padding: 0 0.15rem;
   }
@@ -1221,16 +1199,13 @@ body::before {
     line-height: 1.08;
   }
 
-  .members-story-copy__line--lead::before {
-    left: -2.25rem;
-    top: -0.35rem;
-    font-size: 4rem;
-  }
 
   .members-story-copy__spark {
     grid-template-columns: minmax(1.55rem, 1fr) auto minmax(1.55rem, 1fr);
     column-gap: 0.58rem;
     width: min(15rem, 78%);
+    min-height: 2.85rem;
+    margin: 0.25rem auto 0.45rem;
   }
 
   .members-story-copy__body {
