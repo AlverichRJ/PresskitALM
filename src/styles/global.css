@@ -1055,7 +1055,7 @@ body::before {
 .members-story-copy__line--lead {
   width: var(--members-story-text-width);
   max-width: none;
-  padding-left: clamp(2.65rem, 4.25vw, 4.35rem);
+  padding-left: 0;
   color: rgba(244, 238, 232, 0.96);
   font-family: Oswald, Impact, "Arial Narrow", sans-serif;
   font-size: clamp(1.62rem, 3.05vw, 2.48rem);
@@ -1068,7 +1068,7 @@ body::before {
 .members-story-copy__line--lead::before {
   content: "“";
   position: absolute;
-  left: 0;
+  left: clamp(-4.35rem, -4.25vw, -2.65rem);
   top: clamp(-0.45rem, -0.8vw, -0.15rem);
   color: rgb(199, 58, 14);
   font-family: Oswald, Impact, "Arial Narrow", sans-serif;
@@ -1109,7 +1109,7 @@ body::before {
 
 .members-story-copy__body {
   display: grid;
-  width: min(760px, 100%);
+  width: var(--members-story-text-width);
   max-width: none;
   gap: clamp(0.58rem, 0.95vw, 0.82rem);
   margin: 0 auto;
@@ -1118,6 +1118,12 @@ body::before {
   font-weight: 520;
   line-height: 1.7;
   letter-spacing: -0.01em;
+  text-align: justify;
+  text-align-last: left;
+  text-justify: inter-word;
+}
+
+.members-story-copy__body p {
   text-align: justify;
   text-align-last: left;
   text-justify: inter-word;
@@ -1179,12 +1185,13 @@ body::before {
   }
 
   .members-story-copy__line--lead {
-    padding-left: 2.35rem;
+    padding-left: 0;
     font-size: clamp(1.56rem, 8.4vw, 2.22rem);
     line-height: 1.08;
   }
 
   .members-story-copy__line--lead::before {
+    left: -2.25rem;
     top: -0.35rem;
     font-size: 4rem;
   }
