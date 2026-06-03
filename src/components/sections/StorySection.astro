@@ -1,21 +1,29 @@
 ---
 const moments = [
-  ['Origen', 'Una identidad construida desde la intensidad sonora y la presencia escénica.'],
-  ['Escenario', 'Una propuesta visual oscura, directa y diseñada para conectar con público, medios y promotores.'],
-  ['Presskit', 'Una pieza digital para centralizar historia, música, galería, redes y contacto profesional.']
+  ['2020', 'El inicio', 'Texto'],
+  ['2021', 'Al Maburak', 'La historia del nombre.'],
+  ['2021 – 2025', 'Nuestras canciones', 'Historia de nuestras canciones y qué tenemos que decir.'],
+  ['Hoy', 'Seguimos adelante', 'El trabajo que estamos haciendo hoy en día.']
 ];
 ---
-<section id="historia" class="scene-section scene-section--ember relative overflow-hidden">
+<section id="historia" class="scene-section scene-section--ember history-section relative overflow-hidden">
   <div class="absolute inset-0 bg-radial-ember opacity-50"></div>
-  <div class="section-shell relative">
-    <p class="eyebrow">Historia</p>
-    <h2 class="cinematic-title mt-4 max-w-4xl text-6xl md:text-8xl">Relato oscuro, directo y vivo</h2>
-    <div class="mt-16 grid gap-8 border-l border-ember/35 pl-8">
-      {moments.map(([title, text]) => (
-        <article class="relative rounded-3xl border border-white/10 bg-black/35 p-8 backdrop-blur">
-          <span class="absolute -left-[2.55rem] top-9 h-4 w-4 rounded-full bg-ember shadow-ember"></span>
-          <h3 class="font-display text-4xl uppercase">{title}</h3>
-          <p class="mt-4 max-w-2xl leading-7 text-smoke">{text}</p>
+  <div class="section-shell history-shell relative">
+    <p class="eyebrow history-eyebrow">Historia</p>
+    <h2 class="cinematic-title history-title">Nuestra historia</h2>
+
+    <div class="history-timeline" aria-label="Línea de tiempo de Al-Maburak">
+      {moments.map(([year, title, text]) => (
+        <article class="history-timeline__item">
+          <span class="history-timeline__dot" aria-hidden="true"></span>
+          <div class="history-timeline__copy">
+            <h3 class="history-timeline__heading">
+              <span>{year}</span>
+              <span aria-hidden="true"> · </span>
+              <span>{title}</span>
+            </h3>
+            <p>{text}</p>
+          </div>
         </article>
       ))}
     </div>

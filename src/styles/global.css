@@ -353,6 +353,82 @@ body::before {
     radial-gradient(circle at 16% 32%, rgba(199, 58, 14, 0.13), transparent 34rem);
 }
 
+.history-section {
+  align-items: center;
+}
+
+.history-shell {
+  width: min(980px, calc(100% - 2rem));
+}
+
+.history-eyebrow {
+  margin: 0;
+}
+
+.history-title {
+  max-width: 54rem;
+  margin: clamp(0.85rem, 1.5vw, 1.25rem) 0 0;
+  color: rgba(244, 238, 232, 0.96);
+  font-size: clamp(4rem, 8.5vw, 8.8rem);
+}
+
+.history-timeline {
+  position: relative;
+  display: grid;
+  gap: clamp(2.1rem, 3vw, 3rem);
+  width: min(720px, 100%);
+  margin-top: clamp(3rem, 5vw, 5rem);
+  padding-left: clamp(1.75rem, 3.8vw, 3.1rem);
+}
+
+.history-timeline::before {
+  content: "";
+  position: absolute;
+  top: 0.35rem;
+  bottom: 0.35rem;
+  left: 0.45rem;
+  width: 1px;
+  background: linear-gradient(180deg, transparent, rgba(199, 58, 14, 0.84) 12%, rgba(199, 58, 14, 0.84) 88%, transparent);
+  box-shadow: 0 0 1rem rgba(199, 58, 14, 0.26);
+}
+
+.history-timeline__item {
+  position: relative;
+}
+
+.history-timeline__dot {
+  position: absolute;
+  top: 0.44rem;
+  left: calc(-1 * clamp(1.75rem, 3.8vw, 3.1rem) + 0.2rem);
+  width: 0.56rem;
+  height: 0.56rem;
+  border-radius: 999px;
+  background: rgb(199, 58, 14);
+  box-shadow: 0 0 1rem rgba(199, 58, 14, 0.74);
+}
+
+.history-timeline__copy {
+  max-width: 46rem;
+}
+
+.history-timeline__heading {
+  margin: 0;
+  color: rgba(244, 238, 232, 0.98);
+  font-family: Oswald, Impact, "Arial Narrow", sans-serif;
+  font-size: clamp(1.65rem, 3vw, 3rem);
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+}
+
+.history-timeline__copy p {
+  max-width: 40rem;
+  margin: 0.42rem 0 0;
+  color: rgba(244, 238, 232, 0.72);
+  font-size: clamp(0.96rem, 1.15vw, 1.08rem);
+  line-height: 1.65;
+}
+
 .scene-section--contact {
   justify-content: center;
 }
@@ -362,6 +438,37 @@ body::before {
     min-height: auto;
     padding-block: 6.5rem;
     scroll-margin-top: 5rem;
+  }
+
+  .history-section {
+    padding-block: 5.5rem;
+  }
+
+  .history-title {
+    font-size: clamp(3.3rem, 15vw, 5.2rem);
+  }
+
+  .history-timeline {
+    gap: 2rem;
+    margin-top: 2.7rem;
+    padding-left: 1.65rem;
+  }
+
+  .history-timeline::before {
+    left: 0.32rem;
+  }
+
+  .history-timeline__dot {
+    left: -1.6rem;
+  }
+
+  .history-timeline__heading {
+    font-size: clamp(1.55rem, 7vw, 2.25rem);
+  }
+
+  .history-timeline__copy p {
+    font-size: 0.95rem;
+    line-height: 1.58;
   }
 }
 
