@@ -1149,6 +1149,17 @@ body::before {
   word-spacing: normal;
 }
 
+.members-story-copy__sentence-break {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  hyphens: none;
+  overflow-wrap: normal;
+  word-break: normal;
+}
+
 .members-story-copy__line--origin {
   color: rgba(244, 238, 232, 0.84);
 }
