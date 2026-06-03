@@ -1,12 +1,13 @@
 ---
 import GalleryGrid from '../interactive/GalleryGrid';
 ---
-<section id="galeria" class="scene-section">
-  <div class="section-shell">
+<section id="galeria" class="scene-section gallery-section">
+  <div class="section-shell gallery-section__shell">
     <p class="eyebrow">Galería</p>
-    <h2 class="cinematic-title mt-4 max-w-4xl text-6xl md:text-8xl">Backstage, escenario y presencia</h2>
-    <p class="mt-8 max-w-2xl text-lg leading-8 text-smoke">Estructura preparada para sustituir placeholders por fotografías oficiales, material de conciertos y press shots optimizados.</p>
-    <div class="mt-14">
+    <h2 class="cinematic-title gallery-section__title">Momentos que vale la pena recordar</h2>
+    <p class="gallery-section__lead">No recordamos todos los ensayos, pero sí los momentos que compartimos con el público</p>
+
+    <div class="gallery-section__grid-wrap">
       <GalleryGrid client:visible />
     </div>
   </div>

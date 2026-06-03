@@ -1,13 +1,51 @@
-const items = Array.from({ length: 6 }, (_, index) => index + 1);
+const galleryItems = [
+  {
+    id: 'grupo',
+    label: 'Grupo nosotros',
+    caption: 'Retrato de la banda',
+    className: 'gallery-collage__item--group',
+  },
+  {
+    id: 'tocando-uno',
+    label: 'Tocando',
+    caption: 'Energía en vivo',
+    className: 'gallery-collage__item--playing-one',
+  },
+  {
+    id: 'tocando-dos',
+    label: 'Tocando',
+    caption: 'El pulso del escenario',
+    className: 'gallery-collage__item--playing-two',
+  },
+  {
+    id: 'publico',
+    label: 'Público',
+    caption: 'La respuesta frente al escenario',
+    className: 'gallery-collage__item--audience',
+  },
+  {
+    id: 'detalle',
+    label: 'Pepe con micrófono viejito',
+    caption: 'Detalle con historia',
+    className: 'gallery-collage__item--detail',
+  },
+  {
+    id: 'escenario',
+    label: 'Escenario',
+    caption: 'Donde todo termina de cobrar vida',
+    className: 'gallery-collage__item--stage',
+  },
+];
 
 export default function GalleryGrid() {
   return (
-    <div className="grid gap-5 md:grid-cols-3">
-      {items.map((item) => (
-        <figure key={item} className="group min-h-64 overflow-hidden rounded-[2rem] border border-white/10 bg-gradient-to-br from-white/[0.08] to-ember/10 p-6 transition hover:border-ember/60">
-          <div className="grid h-full min-h-52 place-items-center rounded-[1.4rem] bg-black/35 text-center">
-            <span className="font-display text-5xl uppercase text-bone/45 transition group-hover:text-ember">Foto {item}</span>
+    <div className="gallery-collage" aria-label="Collage de momentos de Al-Maburak">
+      {galleryItems.map((item) => (
+        <figure key={item.id} className={`gallery-collage__item ${item.className}`}>
+          <div className="gallery-collage__placeholder">
+            <span className="gallery-collage__label">{item.label}</span>
           </div>
+          <figcaption className="gallery-collage__caption">{item.caption}</figcaption>
         </figure>
       ))}
     </div>
