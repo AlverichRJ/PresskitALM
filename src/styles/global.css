@@ -1029,7 +1029,7 @@ body::before {
 }
 
 .members-story-copy {
-  --members-story-text-width: min(820px, 100%);
+  --members-story-text-width: min(900px, 100%);
   position: relative;
   z-index: 2;
   display: grid;
@@ -1121,12 +1121,20 @@ body::before {
   text-align: justify;
   text-align-last: left;
   text-justify: inter-word;
+  hyphens: auto;
+  overflow-wrap: normal;
+  word-break: normal;
+  word-spacing: normal;
 }
 
 .members-story-copy__body p {
   text-align: justify;
   text-align-last: left;
   text-justify: inter-word;
+  hyphens: auto;
+  overflow-wrap: normal;
+  word-break: normal;
+  word-spacing: normal;
 }
 
 .members-story-copy__line--origin {
@@ -1177,7 +1185,7 @@ body::before {
   }
 
   .members-story-copy {
-    --members-story-text-width: 100%;
+    --members-story-text-width: min(100%, 34rem);
     max-width: 100%;
     gap: 0.62rem;
     margin-top: 1.3rem;
@@ -1209,5 +1217,9 @@ body::before {
     line-height: 1.66;
     text-align: justify;
     text-align-last: left;
+    hyphens: auto;
+    overflow-wrap: normal;
+    word-break: normal;
+    word-spacing: normal;
   }
 }
