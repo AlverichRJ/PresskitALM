@@ -1,15 +1,30 @@
 ---
 import MusicCarousel from '../interactive/MusicCarousel';
 ---
-<section id="musica" class="scene-section bg-[#080808]">
-  <div class="section-shell">
+<section id="musica" class="scene-section music-section">
+  <div class="section-shell music-section__shell">
     <p class="eyebrow">Música</p>
-    <div class="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
-      <h2 class="cinematic-title mt-4 text-6xl md:text-8xl">Sonido de alto voltaje</h2>
-      <p class="max-w-xl text-lg leading-8 text-smoke">Bloque inicial para destacar canciones, videos oficiales y plataformas. Los enlaces actuales son de referencia y se sustituyen desde `src/content/music.json`.</p>
+
+    <div class="music-section__intro">
+      <h2 class="cinematic-title music-section__title">Donde todo cobra vida</h2>
+      <p class="music-section__lead">Nuestras historias terminaron convirtiéndose en canciones.</p>
     </div>
-    <div class="mt-14">
+
+    <article class="music-feature" aria-label="Canción destacada de Al-Maburak">
+      <div class="music-feature__copy">
+        <p class="music-feature__label">Portada</p>
+        <h3 class="music-feature__title">Nombre de la canción</h3>
+        <p class="music-feature__lyrics">Letra: x</p>
+        <p class="music-feature__links">
+          <a href="https://open.spotify.com/" target="_blank" rel="noreferrer">Enlace a Spotify</a>
+          <span aria-hidden="true">•</span>
+          <a href="https://music.apple.com/" target="_blank" rel="noreferrer">Enlace a Apple Music</a>
+          <span aria-hidden="true">•</span>
+          <a href="#" aria-label="Enlace a otra plataforma de música">Enlace a otra plataforma de música</a>
+        </p>
+      </div>
+
       <MusicCarousel client:visible />
-    </div>
+    </article>
   </div>
 </section>

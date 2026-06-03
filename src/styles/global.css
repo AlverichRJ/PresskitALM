@@ -1332,3 +1332,236 @@ body::before {
     word-spacing: normal;
   }
 }
+
+.music-section {
+  align-items: center;
+  background-color: #0a0807;
+  background-image:
+    linear-gradient(180deg, rgba(0, 0, 0, 0.82) 0%, rgba(10, 8, 7, 0.3) 22%, rgba(10, 8, 7, 0.22) 72%, rgba(0, 0, 0, 0.9) 100%),
+    radial-gradient(circle at 18% 24%, rgba(199, 58, 14, 0.12), transparent 32rem);
+}
+
+.music-section__shell {
+  width: min(1080px, calc(100% - 2rem));
+}
+
+.music-section__intro {
+  display: grid;
+  gap: clamp(1rem, 1.8vw, 1.35rem);
+  max-width: 48rem;
+  margin-top: clamp(0.85rem, 1.4vw, 1.2rem);
+}
+
+.music-section__title {
+  max-width: 10ch;
+  margin: 0;
+  color: rgba(244, 238, 232, 0.98);
+  font-size: clamp(4.2rem, 9vw, 9.5rem);
+}
+
+.music-section__lead {
+  max-width: 42rem;
+  margin: 0;
+  color: rgba(244, 238, 232, 0.78);
+  font-size: clamp(1.05rem, 1.5vw, 1.35rem);
+  line-height: 1.65;
+}
+
+.music-feature {
+  display: grid;
+  gap: clamp(1.4rem, 3vw, 2.4rem);
+  margin-top: clamp(2.4rem, 5vw, 4.2rem);
+}
+
+.music-feature__copy {
+  display: grid;
+  gap: 0.85rem;
+  max-width: 58rem;
+}
+
+.music-feature__label,
+.music-feature__title {
+  margin: 0;
+  color: rgba(244, 238, 232, 0.96);
+  font-family: Oswald, Impact, "Arial Narrow", sans-serif;
+  font-size: clamp(1.45rem, 2.6vw, 2.45rem);
+  line-height: 0.95;
+  letter-spacing: -0.025em;
+  text-transform: uppercase;
+}
+
+.music-feature__lyrics,
+.music-feature__links {
+  margin: 0;
+  color: rgba(244, 238, 232, 0.76);
+  font-size: clamp(0.98rem, 1.15vw, 1.08rem);
+  line-height: 1.7;
+}
+
+.music-feature__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 0.5rem;
+}
+
+.music-feature__links a {
+  color: rgba(244, 238, 232, 0.86);
+  text-decoration: none;
+  transition: color 220ms ease;
+}
+
+.music-feature__links a:hover,
+.music-feature__links a:focus-visible {
+  color: rgb(199, 58, 14);
+  outline: none;
+}
+
+.music-showcase {
+  display: grid;
+  gap: clamp(0.9rem, 2vw, 1.4rem);
+  width: min(100%, 900px);
+}
+
+.music-cover-card,
+.music-video-frame {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  border: 1px solid rgba(244, 238, 232, 0.1);
+  background: rgba(5, 5, 5, 0.92);
+  color: rgb(244, 238, 232);
+  text-decoration: none;
+  box-shadow: 0 1.4rem 4rem rgba(0, 0, 0, 0.34);
+  transition:
+    transform 320ms ease,
+    border-color 320ms ease,
+    box-shadow 320ms ease;
+}
+
+.music-cover-card:hover,
+.music-cover-card:focus-visible,
+.music-video-frame:hover,
+.music-video-frame:focus-visible {
+  border-color: rgba(199, 58, 14, 0.62);
+  box-shadow: 0 1.8rem 4.6rem rgba(0, 0, 0, 0.48), 0 0 3rem rgba(199, 58, 14, 0.14);
+  transform: translateY(-0.28rem);
+  outline: none;
+}
+
+.music-cover-card--featured {
+  width: min(100%, 40rem);
+  border-radius: clamp(1.45rem, 2.8vw, 2.25rem);
+}
+
+.music-cover-card--video {
+  min-width: 0;
+  border-radius: clamp(1.15rem, 2.2vw, 1.8rem);
+}
+
+.music-cover-card__image {
+  display: block;
+  aspect-ratio: 1;
+  width: 100%;
+  object-fit: cover;
+  opacity: 0.9;
+  transition: opacity 320ms ease, transform 520ms ease;
+}
+
+.music-cover-card:hover .music-cover-card__image,
+.music-cover-card:focus-visible .music-cover-card__image {
+  opacity: 1;
+  transform: scale(1.025);
+}
+
+.music-cover-card__content {
+  position: absolute;
+  inset: auto 0 0;
+  z-index: 2;
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: clamp(1.1rem, 2.4vw, 1.7rem);
+  background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.78));
+}
+
+.music-cover-card__platform {
+  margin: 0;
+  color: rgb(199, 58, 14);
+  font-size: clamp(0.62rem, 0.9vw, 0.78rem);
+  font-weight: 900;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+}
+
+.music-cover-card__title {
+  margin: 0.4rem 0 0;
+  color: rgba(244, 238, 232, 0.98);
+  font-family: Oswald, Impact, "Arial Narrow", sans-serif;
+  font-size: clamp(1.8rem, 4.2vw, 3.5rem);
+  line-height: 0.9;
+  letter-spacing: -0.035em;
+  text-transform: uppercase;
+}
+
+.music-cover-card__action {
+  color: rgba(244, 238, 232, 0.76);
+  font-size: clamp(0.58rem, 0.75vw, 0.7rem);
+  font-weight: 900;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+}
+
+.music-video-row {
+  display: grid;
+  grid-template-columns: minmax(11rem, 0.48fr) minmax(0, 1fr);
+  gap: clamp(0.85rem, 1.8vw, 1.25rem);
+  width: min(100%, 48rem);
+}
+
+.music-video-frame {
+  display: grid;
+  min-height: 100%;
+  place-items: center;
+  border-radius: clamp(1.15rem, 2.2vw, 1.8rem);
+  background:
+    radial-gradient(circle at 50% 50%, rgba(199, 58, 14, 0.1), transparent 18rem),
+    linear-gradient(135deg, rgba(244, 238, 232, 0.035), rgba(0, 0, 0, 0.92) 48%, rgba(0, 0, 0, 0.98));
+}
+
+.music-video-frame span {
+  color: rgba(244, 238, 232, 0.72);
+  font-family: Oswald, Impact, "Arial Narrow", sans-serif;
+  font-size: clamp(1.5rem, 3.4vw, 3rem);
+  letter-spacing: -0.025em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+  .music-section {
+    padding-block: 5.75rem;
+  }
+
+  .music-section__title {
+    max-width: 11ch;
+    font-size: clamp(3.35rem, 16vw, 5.6rem);
+  }
+
+  .music-feature {
+    margin-top: 2.2rem;
+  }
+
+  .music-cover-card--featured,
+  .music-showcase,
+  .music-video-row {
+    width: 100%;
+  }
+
+  .music-video-row {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .music-video-frame {
+    min-height: 16rem;
+  }
+}
