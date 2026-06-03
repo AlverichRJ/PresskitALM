@@ -1029,12 +1029,13 @@ body::before {
 }
 
 .members-story-copy {
-  --members-story-text-width: min(900px, 100%);
+  --members-story-text-width: min(820px, 100%);
   position: relative;
   z-index: 2;
   display: grid;
   justify-items: center;
   width: min(980px, 100%);
+  box-sizing: border-box;
   gap: clamp(0.5rem, 0.85vw, 0.75rem);
   margin: clamp(1.35rem, 2.25vw, 1.85rem) auto 0;
   padding: 0 clamp(0.75rem, 3.2vw, 3rem);
@@ -1054,7 +1055,8 @@ body::before {
 
 .members-story-copy__line--lead {
   width: var(--members-story-text-width);
-  max-width: none;
+  max-width: 100%;
+  box-sizing: border-box;
   padding-left: 0;
   color: rgba(244, 238, 232, 0.96);
   font-family: Oswald, Impact, "Arial Narrow", sans-serif;
@@ -1110,7 +1112,8 @@ body::before {
 .members-story-copy__body {
   display: grid;
   width: var(--members-story-text-width);
-  max-width: none;
+  max-width: 100%;
+  box-sizing: border-box;
   gap: clamp(0.58rem, 0.95vw, 0.82rem);
   margin: 0 auto;
   color: rgba(183, 175, 168, 0.9);
@@ -1121,8 +1124,8 @@ body::before {
   text-align: justify;
   text-align-last: left;
   text-justify: inter-word;
-  hyphens: auto;
-  overflow-wrap: normal;
+  hyphens: none;
+  overflow-wrap: break-word;
   word-break: normal;
   word-spacing: normal;
 }
@@ -1131,8 +1134,8 @@ body::before {
   text-align: justify;
   text-align-last: left;
   text-justify: inter-word;
-  hyphens: auto;
-  overflow-wrap: normal;
+  hyphens: none;
+  overflow-wrap: break-word;
   word-break: normal;
   word-spacing: normal;
 }
@@ -1213,12 +1216,13 @@ body::before {
   .members-story-copy__body {
     width: 100%;
     max-width: 100%;
+    box-sizing: border-box;
     font-size: 0.98rem;
     line-height: 1.66;
     text-align: justify;
     text-align-last: left;
-    hyphens: auto;
-    overflow-wrap: normal;
+    hyphens: none;
+    overflow-wrap: break-word;
     word-break: normal;
     word-spacing: normal;
   }
