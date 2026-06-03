@@ -909,7 +909,7 @@ body::before {
   align-items: flex-start;
   min-height: auto;
   overflow: hidden;
-  padding-block: clamp(4.1rem, 5.5vw, 5.7rem) clamp(5rem, 7vw, 7rem);
+  padding-block: clamp(2.4rem, 3.2vw, 3.6rem) clamp(5rem, 7vw, 7rem);
 }
 
 .members-story-section::before {
@@ -1154,7 +1154,7 @@ body::before {
 
 @media (max-width: 768px) {
   .members-story-section {
-    padding-block: 4.4rem 5.25rem;
+    padding-block: 3rem 5.25rem;
   }
 
   .members-story-shell {
