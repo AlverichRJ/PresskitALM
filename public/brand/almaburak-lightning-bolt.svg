@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 96" role="img" aria-labelledby="title">
+  <title>Rayo Al-Maburak</title>
+  <defs>
+    <filter id="ember-glow" x="-80%" y="-80%" width="260%" height="260%" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="3.5" result="blur"/>
+      <feColorMatrix in="blur" type="matrix" values="1 0 0 0 0.78  0 1 0 0 0.23  0 0 1 0 0.06  0 0 0 0.72 0" result="glow"/>
+      <feMerge>
+        <feMergeNode in="glow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <linearGradient id="bolt-gradient" x1="12" y1="4" x2="52" y2="92" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ff7a24"/>
+      <stop offset="0.5" stop-color="#c73a0e"/>
+      <stop offset="1" stop-color="#7f1d08"/>
+    </linearGradient>
+  </defs>
+  <path filter="url(#ember-glow)" fill="url(#bolt-gradient)" d="M39.7 3.4 14.8 50.2h17.8L24.5 92.6l25.2-50.8H31.8L39.7 3.4Z"/>
+  <path fill="rgba(255,244,224,0.34)" d="M36.8 12.8 22.5 44.9h9.1L28.1 69l13.6-31.4h-8.2l3.3-24.8Z"/>
+</svg>
