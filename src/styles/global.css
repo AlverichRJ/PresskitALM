@@ -1035,6 +1035,9 @@ body::before {
   display: grid;
   justify-items: center;
   width: min(980px, 100%);
+  max-width: 100%;
+  min-width: 0;
+  overflow: hidden;
   box-sizing: border-box;
   gap: clamp(0.5rem, 0.85vw, 0.75rem);
   margin: clamp(1.35rem, 2.25vw, 1.85rem) auto 0;
@@ -1113,6 +1116,8 @@ body::before {
   display: grid;
   width: var(--members-story-text-width);
   max-width: 100%;
+  min-width: 0;
+  overflow: hidden;
   box-sizing: border-box;
   gap: clamp(0.58rem, 0.95vw, 0.82rem);
   margin: 0 auto;
@@ -1125,17 +1130,21 @@ body::before {
   text-align-last: left;
   text-justify: inter-word;
   hyphens: none;
-  overflow-wrap: break-word;
+  overflow-wrap: anywhere;
   word-break: normal;
   word-spacing: normal;
 }
 
 .members-story-copy__body p {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
   text-align: justify;
   text-align-last: left;
   text-justify: inter-word;
   hyphens: none;
-  overflow-wrap: break-word;
+  overflow-wrap: anywhere;
   word-break: normal;
   word-spacing: normal;
 }
@@ -1221,8 +1230,10 @@ body::before {
     line-height: 1.66;
     text-align: justify;
     text-align-last: left;
+    min-width: 0;
+    overflow: hidden;
     hyphens: none;
-    overflow-wrap: break-word;
+    overflow-wrap: anywhere;
     word-break: normal;
     word-spacing: normal;
   }
