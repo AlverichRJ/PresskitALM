@@ -30,6 +30,12 @@ const galleryItems = [
     className: 'gallery-collage__item--detail',
   },
   {
+    id: 'convivencia',
+    label: 'Con el público',
+    caption: 'Otro momento compartido',
+    className: 'gallery-collage__item--shared',
+  },
+  {
     id: 'escenario',
     label: 'Escenario',
     caption: 'Donde todo termina de cobrar vida',

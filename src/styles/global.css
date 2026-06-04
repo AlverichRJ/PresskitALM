@@ -1696,6 +1696,11 @@ body::before {
   grid-row: span 2;
 }
 
+.gallery-collage__item--shared {
+  grid-column: 4 / 6;
+  grid-row: span 2;
+}
+
 .gallery-collage__item--stage {
   grid-column: 2 / 6;
   grid-row: span 2;
@@ -1710,7 +1715,8 @@ body::before {
   transform: rotate(-4deg);
 }
 
-.gallery-collage__item--detail .gallery-collage__label {
+.gallery-collage__item--detail .gallery-collage__label,
+.gallery-collage__item--shared .gallery-collage__label {
   color: rgba(244, 238, 232, 0.7);
   font-size: clamp(1.4rem, 3vw, 2.6rem);
 }
@@ -1740,13 +1746,15 @@ body::before {
 
   .gallery-collage__item--playing-one,
   .gallery-collage__item--playing-two,
-  .gallery-collage__item--detail {
+  .gallery-collage__item--detail,
+  .gallery-collage__item--shared {
     grid-column: span 1;
     grid-row: span 2;
   }
 
-  .gallery-collage__item--detail {
-    grid-column: 1 / -1;
+  .gallery-collage__item--detail,
+  .gallery-collage__item--shared {
+    grid-column: span 1;
   }
 
   .gallery-collage__label {
