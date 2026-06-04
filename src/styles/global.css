@@ -1687,7 +1687,7 @@ body::before {
 }
 
 .gallery-collage__item--audience {
-  grid-column: 1 / 4;
+  grid-column: 2 / 4;
   grid-row: span 4;
 }
 
