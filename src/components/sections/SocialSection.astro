@@ -1,6 +1,8 @@
 ---
 import social from '../../content/social.json';
 
+const socialLogoSrc = `${import.meta.env.BASE_URL}images/brand/al-maburak-logo.webp`;
+
 const icons: Record<string, string> = {
   spotify: '<circle cx="12" cy="12" r="9.75" fill="currentColor" /><path d="M7.15 9.26c3.18-.98 6.82-.72 9.68.82M7.75 12.1c2.58-.73 5.38-.5 7.66.82M8.27 14.72c1.96-.52 4.1-.33 5.78.67" fill="none" stroke="#080808" stroke-width="1.55" stroke-linecap="round" />',
   youtube: '<path d="M21.54 6.5a2.73 2.73 0 0 0-1.92-1.94C17.93 4.1 12 4.1 12 4.1s-5.93 0-7.62.46A2.73 2.73 0 0 0 2.46 6.5 28.5 28.5 0 0 0 2 12a28.5 28.5 0 0 0 .46 5.5 2.73 2.73 0 0 0 1.92 1.94c1.69.46 7.62.46 7.62.46s5.93 0 7.62-.46a2.73 2.73 0 0 0 1.92-1.94A28.5 28.5 0 0 0 22 12a28.5 28.5 0 0 0-.46-5.5ZM10 15.35v-6.7L15.5 12 10 15.35Z" />',
@@ -47,6 +49,8 @@ const isExternal = (url: string) => Boolean(url && url !== '#');
       })}
     </div>
 
-    <p class="social-section__signature">Al-Maburak</p>
+    <div class="social-section__signature" aria-label="Al-Maburak">
+      <img src={socialLogoSrc} alt="Al-Maburak" class="social-section__signature-logo" width="220" height="158" loading="lazy" decoding="async" />
+    </div>
   </div>
 </section>

@@ -2041,16 +2041,18 @@ body::before {
 
 .social-section__signature {
   justify-self: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin: clamp(0.4rem, 1.2vw, 1rem) 0 0;
-  color: rgba(244, 238, 232, 0.94);
-  font-family: Oswald, Impact, "Arial Narrow", sans-serif;
-  font-size: clamp(2rem, 4.2vw, 3.5rem);
-  font-style: italic;
-  font-weight: 900;
-  letter-spacing: 0.02em;
-  line-height: 1;
-  text-transform: uppercase;
-  text-shadow: 0 0.9rem 2rem rgba(0, 0, 0, 0.45);
+}
+
+.social-section__signature-logo {
+  display: block;
+  width: clamp(11rem, 18vw, 16rem);
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 0.9rem 2rem rgba(0, 0, 0, 0.48));
 }
 
 @media (max-width: 1180px) {
