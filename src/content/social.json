@@ -1,18 +1,37 @@
 [
   {
-    "label": "Instagram",
-    "url": "https://www.instagram.com/"
-  },
-  {
-    "label": "Facebook",
-    "url": "https://www.facebook.com/"
-  },
-  {
-    "label": "YouTube",
-    "url": "https://www.youtube.com/"
-  },
-  {
+    "slug": "spotify",
     "label": "Spotify",
-    "url": "https://open.spotify.com/"
+    "url": "#",
+    "description": "Escucha nuestra música donde quieras.",
+    "cta": "Pendiente"
+  },
+  {
+    "slug": "youtube",
+    "label": "YouTube",
+    "url": "https://www.youtube.com/@almaburak",
+    "description": "Videos, presentaciones y detrás de cámaras.",
+    "cta": "Ir a YouTube"
+  },
+  {
+    "slug": "instagram",
+    "label": "Instagram",
+    "url": "https://www.instagram.com/almaburakmusic/",
+    "description": "Fotos, momentos y lo que no siempre se ve.",
+    "cta": "Ir a Instagram"
+  },
+  {
+    "slug": "facebook",
+    "label": "Facebook",
+    "url": "https://www.facebook.com/almaburakmusic",
+    "description": "Noticias, fechas y todo lo que viene.",
+    "cta": "Ir a Facebook"
+  },
+  {
+    "slug": "tiktok",
+    "label": "TikTok",
+    "url": "https://www.tiktok.com/@almaburakmusic",
+    "description": "Clips, energía en vivo y contenido rápido.",
+    "cta": "Ir a TikTok"
   }
 ]

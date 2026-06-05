@@ -1821,3 +1821,270 @@ body::before {
     max-height: 2.7rem;
   }
 }
+
+.social-section {
+  overflow: hidden;
+  background-image:
+    linear-gradient(180deg, rgba(0, 0, 0, 0.94), rgba(7, 7, 7, 0.96)),
+    radial-gradient(circle at 12% 20%, rgba(199, 58, 14, 0.12), transparent 28rem);
+}
+
+.social-section::after {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 clamp(1rem, 3vw, 2rem);
+  width: 0.28rem;
+  pointer-events: none;
+  background:
+    radial-gradient(circle, rgb(224, 35, 25) 0 0.2rem, transparent 0.23rem) 0 7% / 100% 7rem repeat-y;
+  opacity: 0.9;
+}
+
+.social-section__shell {
+  display: grid;
+  gap: clamp(2.6rem, 5vw, 4.6rem);
+}
+
+.social-section__intro {
+  display: grid;
+  gap: clamp(0.85rem, 1.6vw, 1.25rem);
+  max-width: 43rem;
+}
+
+.social-section__eyebrow {
+  position: relative;
+  padding-left: 1.35rem;
+}
+
+.social-section__eyebrow::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 0.46rem;
+  height: 0.46rem;
+  border-radius: 999px;
+  background: rgb(224, 35, 25);
+  transform: translateY(-50%);
+  box-shadow: 0 0 1.2rem rgba(224, 35, 25, 0.7);
+}
+
+.social-section__title {
+  max-width: 11ch;
+  margin: 0;
+  color: rgba(244, 238, 232, 0.98);
+  font-size: clamp(4rem, 9vw, 8.4rem);
+  line-height: 0.86;
+  text-wrap: balance;
+}
+
+.social-section__rule,
+.social-card__divider {
+  display: block;
+  width: 2.8rem;
+  height: 0.18rem;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgb(199, 58, 14), rgba(244, 238, 232, 0.25));
+  box-shadow: 0 0 1.4rem rgba(199, 58, 14, 0.42);
+}
+
+.social-section__copy {
+  max-width: 25rem;
+  margin: 0;
+  color: rgba(244, 238, 232, 0.62);
+  font-size: clamp(0.95rem, 1.45vw, 1.1rem);
+  font-weight: 700;
+  line-height: 1.65;
+}
+
+.social-section__grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: clamp(0.85rem, 1.55vw, 1.25rem);
+}
+
+.social-card {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  align-content: end;
+  justify-items: center;
+  min-height: clamp(21rem, 34vw, 27rem);
+  overflow: hidden;
+  border: 1px solid rgba(244, 238, 232, 0.11);
+  border-radius: clamp(1.1rem, 1.8vw, 1.55rem);
+  padding: clamp(1.3rem, 2vw, 1.8rem);
+  color: rgb(244, 238, 232);
+  text-align: center;
+  text-decoration: none;
+  background:
+    linear-gradient(180deg, rgba(244, 238, 232, 0.035), rgba(0, 0, 0, 0.9) 72%),
+    radial-gradient(circle at 50% 28%, rgba(244, 238, 232, 0.12), transparent 12rem),
+    #080808;
+  box-shadow: inset 0 0 0 1px rgba(199, 58, 14, 0.045), 0 1.6rem 4rem rgba(0, 0, 0, 0.25);
+  transition: transform 260ms ease, border-color 260ms ease, box-shadow 260ms ease, color 260ms ease;
+}
+
+.social-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background:
+    linear-gradient(180deg, rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.88)),
+    var(--social-card-bg, radial-gradient(circle at 50% 30%, rgba(244, 238, 232, 0.18), transparent 13rem));
+  filter: grayscale(1);
+  opacity: 0.68;
+  transition: opacity 260ms ease, filter 260ms ease, transform 260ms ease;
+}
+
+.social-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(180deg, transparent 18%, rgba(0, 0, 0, 0.2) 44%, rgba(0, 0, 0, 0.92) 100%);
+}
+
+.social-card:hover,
+.social-card:focus-visible {
+  border-color: rgba(199, 58, 14, 0.82);
+  color: rgb(255, 122, 62);
+  transform: translateY(-0.35rem);
+  box-shadow: inset 0 0 0 1px rgba(199, 58, 14, 0.12), 0 2rem 5rem rgba(0, 0, 0, 0.38);
+  outline: none;
+}
+
+.social-card:hover::before,
+.social-card:focus-visible::before {
+  filter: grayscale(0.85);
+  opacity: 0.86;
+  transform: scale(1.04);
+}
+
+.social-card__backdrop {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: radial-gradient(circle at 50% 42%, rgba(199, 58, 14, 0.12), transparent 12rem);
+}
+
+.social-card__icon {
+  display: grid;
+  place-items: center;
+  width: clamp(4.5rem, 7vw, 6rem);
+  height: clamp(4.5rem, 7vw, 6rem);
+  margin-bottom: clamp(1.4rem, 2.5vw, 2.2rem);
+  color: rgb(255, 115, 49);
+  filter: drop-shadow(0 0.7rem 1.8rem rgba(199, 58, 14, 0.28));
+}
+
+.social-card__icon svg {
+  width: 100%;
+  height: 100%;
+  fill: currentColor;
+}
+
+.social-card__label {
+  color: rgba(244, 238, 232, 0.95);
+  font-family: Oswald, Impact, "Arial Narrow", sans-serif;
+  font-size: clamp(1rem, 1.65vw, 1.35rem);
+  font-weight: 900;
+  letter-spacing: 0.18em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.social-card__divider {
+  width: 1.35rem;
+  height: 0.16rem;
+  margin: clamp(0.85rem, 1.4vw, 1.15rem) auto;
+}
+
+.social-card__description {
+  min-height: 3.9rem;
+  color: rgba(244, 238, 232, 0.66);
+  font-size: clamp(0.78rem, 1.05vw, 0.95rem);
+  font-weight: 700;
+  line-height: 1.55;
+}
+
+.social-card__cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  margin-top: clamp(1.4rem, 2vw, 1.85rem);
+  color: rgb(255, 115, 49);
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.social-card--pending {
+  cursor: default;
+}
+
+.social-card--pending .social-card__cta {
+  color: rgba(244, 238, 232, 0.48);
+}
+
+.social-card--spotify {
+  --social-card-bg: radial-gradient(circle at 50% 28%, rgba(30, 215, 96, 0.22), transparent 12rem), linear-gradient(135deg, rgba(244, 238, 232, 0.08), rgba(0, 0, 0, 0.6));
+}
+
+.social-card--youtube {
+  --social-card-bg: radial-gradient(circle at 50% 28%, rgba(255, 0, 0, 0.22), transparent 12rem), linear-gradient(135deg, rgba(244, 238, 232, 0.08), rgba(0, 0, 0, 0.6));
+}
+
+.social-card--instagram {
+  --social-card-bg: radial-gradient(circle at 50% 28%, rgba(199, 58, 14, 0.27), transparent 12rem), linear-gradient(135deg, rgba(244, 238, 232, 0.08), rgba(0, 0, 0, 0.6));
+}
+
+.social-card--facebook {
+  --social-card-bg: radial-gradient(circle at 50% 28%, rgba(24, 119, 242, 0.22), transparent 12rem), linear-gradient(135deg, rgba(244, 238, 232, 0.08), rgba(0, 0, 0, 0.6));
+}
+
+.social-card--tiktok {
+  --social-card-bg: radial-gradient(circle at 50% 28%, rgba(255, 0, 80, 0.22), transparent 12rem), linear-gradient(135deg, rgba(244, 238, 232, 0.08), rgba(0, 0, 0, 0.6));
+}
+
+.social-section__signature {
+  justify-self: center;
+  margin: clamp(0.4rem, 1.2vw, 1rem) 0 0;
+  color: rgba(244, 238, 232, 0.94);
+  font-family: Oswald, Impact, "Arial Narrow", sans-serif;
+  font-size: clamp(2rem, 4.2vw, 3.5rem);
+  font-style: italic;
+  font-weight: 900;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  text-transform: uppercase;
+  text-shadow: 0 0.9rem 2rem rgba(0, 0, 0, 0.45);
+}
+
+@media (max-width: 1180px) {
+  .social-section__grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .social-section::after {
+    left: 0.65rem;
+    opacity: 0.55;
+  }
+
+  .social-section__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .social-card {
+    min-height: 19rem;
+  }
+
+  .social-section__title {
+    font-size: clamp(3.25rem, 17vw, 5.2rem);
+  }
+}
