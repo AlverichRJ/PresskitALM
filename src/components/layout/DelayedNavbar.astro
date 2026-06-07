@@ -1,3 +1,24 @@
-<header class="contact-shortcut" aria-label="Acceso rápido de contacto">
-  <a href="#contacto" class="contact-shortcut__button">Contáctanos</a>
+---
+import band from '../../content/band.json';
+---
+<header class="contact-shortcut" aria-label="Acceso rápido de contacto" data-contact-shortcut aria-hidden="true">
+  <a href={`mailto:${band.contactEmail}`} class="contact-shortcut__button">Contáctanos</a>
 </header>
+<script>
+  const contactShortcut = document.querySelector('[data-contact-shortcut]');
+  const contactSection = document.querySelector('#contacto');
+
+  const setContactShortcutVisibility = (isVisible) => {
+    contactShortcut?.classList.toggle('is-visible', isVisible);
+    contactShortcut?.setAttribute('aria-hidden', String(!isVisible));
+  };
+
+  if (contactShortcut && contactSection) {
+    const observer = new IntersectionObserver(
+      ([entry]) => setContactShortcutVisibility(entry.isIntersecting),
+      { threshold: 0.28 }
+    );
+
+    observer.observe(contactSection);
+  }
+</script>
