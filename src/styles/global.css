@@ -2074,3 +2074,84 @@ body::before {
     font-size: clamp(3.25rem, 17vw, 5.2rem);
   }
 }
+
+.contact-shortcut {
+  position: fixed;
+  top: clamp(0.9rem, 2.4vw, 1.4rem);
+  right: clamp(0.9rem, 2.4vw, 1.4rem);
+  z-index: 50;
+  pointer-events: none;
+}
+
+.contact-shortcut__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.75rem;
+  padding: 0.8rem 1.15rem;
+  border: 1px solid rgba(244, 238, 232, 0.16);
+  border-radius: 999px;
+  background: rgba(9, 8, 7, 0.68);
+  color: rgba(244, 238, 232, 0.92);
+  font-size: clamp(0.72rem, 1.8vw, 0.82rem);
+  font-weight: 900;
+  letter-spacing: 0.16em;
+  line-height: 1;
+  text-transform: uppercase;
+  text-decoration: none;
+  box-shadow: 0 1.1rem 2.5rem rgba(0, 0, 0, 0.34), 0 0 1.5rem rgba(199, 58, 14, 0.12);
+  backdrop-filter: blur(18px);
+  pointer-events: auto;
+  transition: border-color 220ms ease, color 220ms ease, transform 220ms ease, box-shadow 220ms ease;
+}
+
+.contact-shortcut__button:hover,
+.contact-shortcut__button:focus-visible {
+  border-color: rgba(199, 58, 14, 0.72);
+  color: #fff;
+  outline: none;
+  transform: translateY(-1px);
+  box-shadow: 0 1.2rem 2.7rem rgba(0, 0, 0, 0.42), 0 0 1.9rem rgba(199, 58, 14, 0.26);
+}
+
+.back-to-top-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1.15rem;
+  color: rgba(244, 238, 232, 0.72);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: color 220ms ease, transform 220ms ease;
+}
+
+.back-to-top-button::before {
+  content: "↑";
+  margin-right: 0.5rem;
+  color: var(--color-ember);
+  font-size: 0.95rem;
+  line-height: 1;
+}
+
+.back-to-top-button:hover,
+.back-to-top-button:focus-visible {
+  color: #fff;
+  outline: none;
+  transform: translateY(-1px);
+}
+
+@media (max-width: 640px) {
+  .contact-shortcut {
+    top: 0.75rem;
+    right: 0.75rem;
+  }
+
+  .contact-shortcut__button {
+    min-height: 2.45rem;
+    padding: 0.72rem 0.95rem;
+    letter-spacing: 0.12em;
+  }
+}
